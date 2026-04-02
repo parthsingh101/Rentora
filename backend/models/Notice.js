@@ -15,6 +15,11 @@ const NoticeSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Property",
     },
+    targetType: {
+      type: String,
+      enum: ["tenant", "property", "all"],
+      default: "tenant",
+    },
     title: {
       type: String,
       required: [true, "Notice title is required"],

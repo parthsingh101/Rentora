@@ -54,10 +54,19 @@ const MonthlyBillSchema = new mongoose.Schema(
     },
     paymentStatus: {
       type: String,
-      enum: ["pending", "paid", "overdue", "partial"],
+      enum: ["pending", "paid", "overdue", "partial", "proof_submitted"],
       default: "pending",
     },
     paymentProofUrl: {
+      type: String,
+    },
+    paymentProofNote: {
+      type: String,
+    },
+    paymentProofDate: {
+      type: Date,
+    },
+    rejectionReason: {
       type: String,
     },
     notes: {
